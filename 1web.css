@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	/* overflow-y: hidden; */
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	overflow-x: hidden;
+	/* height: 20000px; */
+}
+/* **************code starts from here************** */
+
+
+/* ************ 1. Top bar***************** */
+.topmenu {
+	background-color: #255f94;
+	width: 100%;
+	height: clamp(3rem, 1.5vw, 3.5rem);
+	display: flex;
+	justify-content: center;
+}
+
+.top-2-content {
+	display: flex;
+	gap: 8rem;
+	/* align-items: center; */
+
+}
+
+.top-2-content div {
+	color: white;
+	font-family: "poppins", serif;
+	font-weight: 400;
+	display: flex;
+	font-size: 1.3rem;
+	align-items: center;
+}
+
+#top-icon {
+	font-size: 1.7rem;
+	padding-right: 1rem;
+}
+/* *********2. Header code A.k.A logo wala code********* */
+.headerbar {
+	/* background-color: rgb(255, 255, 255); */
+	background-image: url(https://img.freepik.com/premium-vector/book-pattern_978047-228.jpg);
+	width: 100%;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.header-image {
+	display: flex;
+	margin: 0 2%;
+	align-content: center;
+	background-color: rgba(255, 255, 255, 0.705);
+	justify-content: center;
+}
+
+#apexlogo {
+	width: 90%;
+	height: 11rem;
+	display: flex;
+	padding: 0.5% 0;
+	object-fit: contain;
+}
+
+.header-image a {
+	display: flex;
+	justify-content: center;
+}
+/* *****3.Horizontal navbar code */
+.navbar {
+	position: sticky;
+	top: 0px;
+	background-color: #c6cdd3;
+	height: clamp(3.5rem, 1.5vw, 6rem);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.navi-menu {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	box-shadow:
+		inset 8px 0 6px -10px rgba(0, 0, 0, 0.6),
+		inset -8px 0 6px -10px rgba(0, 0, 0, 0.6);
+}
+
+.navi-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.navi-menu a {
+	flex: 0 0 auto;
+	/* prevent shrinking */
+	color: #000000;
+	text-decoration: none;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	padding: 1rem 1rem;
+	border-radius: 10px;
+	transition: background 0.3s ease, color 0.3s ease;
+	font-family: "Poppins", sans-serif;
+	font-size: 1.5rem;
+}
+
+.navi-menu a:hover,
+.navi-menu a:focus {
+	color: #000000;
+	outline: none;
+	background-color: rgb(141, 157, 179);
+}
+
+/* ******3.1 anim. menu icon ******** */
+.nav-icon {
+	display: flex;
+	justify-content: center;
+	background-color: #D8D8D8;
+	padding: 0 1%;
+	border-radius: 10px;
+}
+
+.hamburger {
+	padding-right: 2%;
+	cursor: pointer;
+}
+
+.hamburger input {
+	display: none;
+}
+
+.hamburger svg {
+	/* The size of the SVG defines the overall size */
+	height: 100%;
+	/* Define the transition for transforming the SVG */
+	transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+	stroke: rgb(0, 0, 0);
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 2;
+	/* Define the transition for transforming the Stroke */
+	transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+		stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+	fill: none;
+	stroke-dasharray: 15 61;
+}
+
+.hamburger input:checked+svg {
+	transform: rotate(45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+	stroke-dasharray: 20 30;
+	stroke-dashoffset: -32.42;
+}
+/* **********4. image-slider************ */
+/* Container for slider */
+.image-slider {
+  width: 100%;
+  height: 55vh; /* responsive height */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  align-items: center;
+}
+
+/* Blurred full-width background */
+.image-slider::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  filter: blur(7px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.img-slid {
+  height: 100%;         /* full height of slider */
+  width: auto;          /* width adjusts automatically */
+  max-width: 100%;      /* shrink if container gets smaller */
+  object-fit: contain;  /* entire image fits inside container without cropping */
+  position: absolute;
+  z-index: 1;
+  transition: opacity 0.8s ease;
+}
+
+
+/* Dots container (already in JS) */
+.dots-container {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+/* Arrow buttons (already in JS) */
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* *********5. Latest News bar************* */
+.scrolling-parent {
+	display: flex;
+	justify-content: center;
+	background-color: antiquewhite;
+	flex: 1 0 auto;
+	width: auto;
+	height: 3rem;
+	border: 1px solid;
+}
+
+.notif-slider {
+	flex-basis: 200rem;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	overflow: hidden;
+}
+
+.notif-slider h {
+	font-family: poppins;
+	font-size: 2rem;
+	white-space: nowrap;
+	background-color: orange;
+	height: 100%;
+	display: flex;
+	flex-direction:left;
+	align-items: center;
+	padding: 0 1rem;
+	border-left: 0.5px solid black;
+	border-right: 0.5px solid black;
+}
+
+.moving-content a {
+	white-space: nowrap;
+	text-decoration: none;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 1.7rem;
+	color: black;
+	padding: 0 2rem;
+}
+
+.slider-content {
+	overflow: hidden;
+	position: relative;
+	flex: 1 1 auto
+}
+
+.moving-content {
+	white-space: nowrap;
+	flex-basis: 100%;
+	animation: move 30s linear infinite;
+}
+
+@keyframes move {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+
+
+.footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
+}
+
+.footer-dark .item.social > a:hover {
+  opacity:0.9;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+
+
+/* *************media query's**************** */
+@media (max-width: 768px) {
+  .img-slid {
+    height: auto;
+    max-width: 100%;  /* shrink a bit more on tablets */
+  }
+  .image-slider{
+	height: 40rem;
+  }
+}
+
+@media (max-width: 480px) {
+	.notif-slider h {
+		font-size: 1.3rem;
+		padding: 0rem 0.5rem;
+	}
+	.scrolling-parent {
+		height: 2.5rem;
+	}
+	.moving-content a {
+		font-size: 1.5rem;
+	}
+	.top-2-content {
+		gap: 1rem;
+	}
+	#top-icon {
+		font-size: 1.2rem;
+		padding-right: 0.5rem;
+	}
+	.top-2-content div {
+		font-size: 1.2rem;
+	}
+	#apexlogo {
+		height: 6.5rem;
+	}
+	
+	.img-slid {
+    height: 100%;
+    width: auto;  /* shrink further on mobile */
+  }
+  .image-slider{
+	height:25vh;
+  }
+}
+
